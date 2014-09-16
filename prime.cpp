@@ -1,3 +1,5 @@
+// c++ -o primecpp prime.cpp
+
 #include <iostream>
 using namespace std;
 
