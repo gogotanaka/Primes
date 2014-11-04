@@ -17,9 +17,7 @@ int main()
   for (int i=0; i<=count; i++) {
      cout << primes[i] << " ";
   }
-
 }
-
 
 bool isPrime(int n, int *primes, int count)
 {

@@ -1,16 +1,11 @@
 var N = 100
 
-function isPrime(element, primes) {
-  return primes.every(function(p){
-    return element % p != 0;
-  });
-}
+primes = Array.apply(null, {length: N-1}).map(
+  function(_e, index) { return index + 2 }
+)
 
-var primes = [2]
-for(i = 3; i < N; i++) {
-  if (isPrime(i,primes)) {
-    primes.push(i);
-  }
+for(sieve=2; sieve<=Math.sqrt(N); sieve++) {
+  primes = primes.filter(function(num) { return (num % sieve != 0) || (num == sieve); });
 }
 
 print(primes);

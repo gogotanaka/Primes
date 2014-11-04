@@ -1,13 +1,11 @@
 N = 100
 
-from functools import reduce
+import math
+from functools import partial
 
-def is_prime(n, primes):
-  return all(n % prime != 0 for prime in primes)
+primes = range(2, N+1)
 
-def appendPrime(n, primes):
-    if is_prime(n, primes):
-        primes.append(n)
-    return primes
+for sieve in range(2, int(math.sqrt(N)) + 1):
+  primes = filter(lambda num: (num % sieve != 0) or (num == sieve), primes)
 
-print reduce((lambda primes, y: appendPrime(y, primes)), range(3, N), [2])
+print primes

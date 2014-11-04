@@ -1,12 +1,12 @@
 N = 100
 
-isPrime = (element, primes) ->
-  primes.every (p) ->
-    element % p isnt 0
+primes =  [2..N]
 
-primes = [2]
-i = 3
-while i < N
-  primes.push i  if isPrime(i, primes)
-  i++
+sieve = 2
+while sieve <= Math.sqrt(N)
+  primes = primes.filter((num) ->
+    (num % sieve isnt 0) or (num is sieve)
+  )
+  sieve++
+
 process.stdout.write primes.toString()
