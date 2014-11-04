@@ -1,5 +1,4 @@
-// gcc -o primec prime.c
-// ./primec
+int  N=100;
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -8,7 +7,7 @@ int isPrime(int n, int *primes, int count);
 
 int main()
 {
-  int N=100, count=0, primes[N];
+  int count=0, primes[N];
 
   primes[count] = 2;
 
@@ -17,7 +16,7 @@ int main()
   }
 
   for (int i=0; i<=count; i++) {
-    printf("%d\n", primes[i]);
+    printf("%d ", primes[i]);
   }
 
   return 0;

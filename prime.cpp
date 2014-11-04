@@ -1,5 +1,4 @@
-// c++ -o primecpp prime.cpp
-// ./primecpp
+int  N=100;
 
 #include <iostream>
 using namespace std;
@@ -8,7 +7,7 @@ bool isPrime(int n, int *primes, int count);
 
 int main()
 {
-  int  N=100, primes[N], count=0;;
+  int primes[N], count=0;;
   primes[count] = 2;
 
   for (int i=3; i<=N; i++) {
@@ -19,7 +18,6 @@ int main()
      cout << primes[i] << " ";
   }
 
-  cout << "" << endl;
 }
 
 

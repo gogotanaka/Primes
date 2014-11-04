@@ -1,0 +1,39 @@
+# Execute for all of languages.
+# You need to adjust with your environment.
+
+echo '---- C ----'
+gcc -o primec prime.c
+./primec
+echo '\n'
+
+echo '---- CoffeeScript ----'
+coffee prime.coffee
+echo '\n'
+
+echo '---- CoffeeScript ----'
+coffee prime.coffee
+echo '\n'
+
+echo '---- C++ ----'
+c++ -o primecpp prime.cpp
+./primecpp
+echo '\n'
+
+echo '---- Haskell ----'
+ghc --make prime.hs
+./prime
+echo '\n'
+
+echo '---- JavaScript ----'
+# Only for mac
+alias jsc="/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Resources/jsc"
+jsc prime.js
+echo '\n'
+
+echo '---- Python ----'
+python prime.py
+echo '\n'
+
+echo '---- Ruby ----'
+ruby prime.rb
+echo '\n'

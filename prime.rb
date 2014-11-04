@@ -1,8 +1,7 @@
-# ruby prime.rb
-def prime_simple(n)
-  (2..n).inject([]) do |primes, i|
-    primes.any?{ |p| i % p == 0 } ? primes : primes << i
-  end
+N = 100
+
+primes = (2..N).inject([]) do |primes, i|
+  primes.any?{ |p| i % p == 0 } ? primes : primes << i
 end
 
-p prime_simple(100)
+p primes

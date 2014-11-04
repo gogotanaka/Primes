@@ -1,10 +1,9 @@
-# coffee prime.coffee
+N = 100
 
 isPrime = (element, primes) ->
   primes.every (p) ->
     element % p isnt 0
 
-N = 100
 primes = [2]
 i = 3
 while i < N

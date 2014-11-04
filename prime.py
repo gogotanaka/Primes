@@ -1,7 +1,6 @@
-# python prime.py
-from functools import reduce
+N = 100
 
-N = 1000
+from functools import reduce
 
 def is_prime(n, primes):
   return all(n % prime != 0 for prime in primes)
