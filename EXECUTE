@@ -1,43 +1,58 @@
 # Execute for all of languages.
 # You need to adjust with your environment.
 
-echo '---- C ----'
+red=31
+green=32
+yellow=33
+blue=34
+magenta=35
+cyan=36
+white=37
+
+colors=($red $green $yellow $blue $magenta $cyan $white)
+
+current_color=0
+
+function lang {
+    color=${colors[$current_color]}
+    shift
+    echo "---- \033[${color}m$1\033[m ----"
+    let current_color=(${current_color}+1)%6
+}
+
+lang 0 "C"
 gcc -o primec prime.c
 ./primec
 echo '\n'
 
-echo '---- CoffeeScript ----'
+lang 0 "CoffeeScript"
 coffee prime.coffee
 echo '\n'
 
-echo '---- CoffeeScript ----'
-coffee prime.coffee
-echo '\n'
-
-echo '---- C++ ----'
+lang 0 "C++"
 c++ -o primecpp prime.cpp
 ./primecpp
 echo '\n'
 
-echo '---- Haskell ----'
+lang 0 "Haskell"
 ghc --make prime.hs
 ./prime
 echo '\n'
 
-echo '---- JavaScript ----'
+lang 0 "JavaScript"
 # Only for mac
 alias jsc="/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Resources/jsc"
 jsc prime.js
 echo '\n'
 
-echo '---- Perl ----'
+lang 0 "Perl"
 perl prime.pl
 echo '\n'
 
-echo '---- Python ----'
+lang 0 "Python"
 python prime.py
 echo '\n'
 
-echo '---- Ruby ----'
+lang 0 "Ruby"
 ruby prime.rb
 echo '\n'
