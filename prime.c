@@ -1,34 +1,22 @@
-int  N=100;
-
+#define N 100
 #include <stdio.h>
-#include <stdlib.h>
+#include <math.h>
 
-int isPrime(int n, int *primes, int count);
+int primes[N];
 
-int main()
-{
-  int count=0, primes[N];
+int main() {
+  for (int i=0; i<N; i++) { primes[i] = 1; }
 
-  primes[count] = 2;
-
-  for (int i=3; i<=N; i++) {
-    if (isPrime(i, primes, count)) primes[++count] = i;
+  for (int sieve=2; sieve<sqrt(N); sieve++) {
+    if (primes[sieve]) {
+      for (int j=0; sieve * (j + 2) < N; j++) {
+        primes[sieve * (j + 2)] = 0;
+      }
+    }
   }
 
-  for (int i=0; i<=count; i++) {
-    printf("%d ", primes[i]);
+  for (int i=2; i<N; i++){
+    if (primes[i]) printf("%d ", i);
   }
-
   return 0;
-}
-
-
-int isPrime(int n, int *primes, int count)
-{
-  int rslt = 0;
-  for (int j=0; j<=count; j++) {
-    if (n % (*(primes+j)) == 0) break;
-    if (j == count) rslt = 1;
-  }
-  return rslt;
 }

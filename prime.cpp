@@ -1,30 +1,22 @@
-int  N=100;
-
+#define N 100
 #include <iostream>
+#include <math.h>
 using namespace std;
 
-bool isPrime(int n, int *primes, int count);
+int primes[N];
 
-int main()
-{
-  int primes[N], count=0;;
-  primes[count] = 2;
+int main() {
+  for (int i=0; i<N; i++) { primes[i] = 1; }
 
-  for (int i=3; i<=N; i++) {
-    if (isPrime(i, primes, count)) primes[++count] = i;
+  for (int sieve=2; sieve<sqrt(N); sieve++) {
+    if (primes[sieve]) {
+      for (int j=0; sieve * (j + 2) < N; j++) {
+        primes[sieve * (j + 2)] = 0;
+      }
+    }
   }
 
-  for (int i=0; i<=count; i++) {
-     cout << primes[i] << " ";
+  for (int i=2; i<N; i++){
+    if (primes[i]) cout << i << " ";
   }
-}
-
-bool isPrime(int n, int *primes, int count)
-{
-  int rslt = 0;
-  for (int j=0; j<=count; j++) {
-    if (n % (*(primes+j)) == 0) break;
-    if (j == count) rslt = 1;
-  }
-  return rslt;
 }
