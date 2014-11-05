@@ -1,3 +1,6 @@
+
+![Screen Shot 2014-11-04 at 8.56.52 PM.png](https://qiita-image-store.s3.amazonaws.com/0/30440/c0ccb820-7b2b-c55b-b355-56a45349e40a.png)
+
 # Prime numbers up to 100 with ALL programing languages.
 
 Use [Sieve of Eratosthenes](http://en.wikipedia.org/wiki/Sieve_of_Eratosthenes)
