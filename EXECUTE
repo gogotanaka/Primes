@@ -30,6 +30,10 @@ alias jsc="/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Resour
 jsc prime.js
 echo '\n'
 
+echo '---- Perl ----'
+perl prime.pl
+echo '\n'
+
 echo '---- Python ----'
 python prime.py
 echo '\n'
