@@ -45,6 +45,10 @@ alias jsc="/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Resour
 jsc prime.js
 echo '\n'
 
+lang 0 "PHP"
+php prime.php
+echo '\n'
+
 lang 0 "Perl"
 perl prime.pl
 echo '\n'
