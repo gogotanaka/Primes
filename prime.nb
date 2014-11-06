@@ -1,2 +1,2 @@
 primes = Prime ~Array~ PrimePi@# &;
-primes @ 20
+primes @ 100
