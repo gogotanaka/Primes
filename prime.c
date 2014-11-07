@@ -1,6 +1,5 @@
 #define N 100
 #include <stdio.h>
-#include <math.h>
 
 int primes[N];
 
@@ -15,8 +14,6 @@ int main() {
     }
   }
 
-  for (int i=2; i<N; i++){
-    if (primes[i]) printf("%d ", i);
-  }
+  for (int i=2; i<N; i++) { if (primes[i]) printf("%d ", i); }
   return 0;
 }

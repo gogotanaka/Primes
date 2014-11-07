@@ -1,6 +1,5 @@
 #define N 100
 #include <iostream>
-#include <math.h>
 using namespace std;
 
 int primes[N];
@@ -16,7 +15,5 @@ int main() {
     }
   }
 
-  for (int i=2; i<N; i++){
-    if (primes[i]) cout << i << " ";
-  }
+  for (int i=2; i<N; i++) { if (primes[i]) cout << i << " "; }
 }
