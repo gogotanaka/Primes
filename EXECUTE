@@ -60,3 +60,7 @@ echo '\n'
 lang 0 "Ruby"
 ruby prime.rb
 echo '\n'
+
+lang 0 "Fortran95"
+gcc -o primef95 -lgfortran -x f95 prime.f95
+./primef95
