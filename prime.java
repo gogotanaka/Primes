@@ -1,42 +1,16 @@
-public class PrimeNumber {
+import java.util.LinkedList;
+import java.util.BitSet;
 
-	public static void main(String[] args) {
-		
-		int[] primeNumb = new int[25];
-		int counter = 0;
-		
-		for(int i =2; i <= 100; i++){
-			
-			for(int j = 2; j <= 100; j++){
-				
-				if(i%j == 0 && i != j){
-					//breaks out of the loop since it is not prime 
-					break;
-				}else if(j == 100){
-					primeNumb[counter]= i;
-					 //increase the counter in order to move through the array
-					counter++;
-				}
-			}
-			
-		}
-		  //prints out the numbers 
-		for(int i =0; i < primeNumb.length; i++){
-		
-			  //checks if it is the first number that it is printing out in order to open the square bracket
-			if(i == 0){
-				System.out.print("["+primeNumb[i]+", "); 
-			
-				
-			}else if(i == (primeNumb.length - 1)){
-            //checks if it is the last number in order to close the square bracket
-				System.out.print(primeNumb[i] + "]");
-			}else{
-				System.out.print(primeNumb[i] + ", "); 
-			}
-			
-		}
+public class Prime {
+  public static void main(String[] args) { System.out.println(sieve(100)); }
+  public static LinkedList<Integer> sieve(int n) {
+    LinkedList<Integer> primes = new LinkedList<Integer>();
+    BitSet nonPrimes = new BitSet(n+1);
 
-	}
-
+    for (int p=2; p<=n; p=nonPrimes.nextClearBit(p+1)) {
+      for (int i=p*p; i<=n; i+=p) { nonPrimes.set(i); }
+      primes.add(p);
+    }
+    return primes;
+  }
 }

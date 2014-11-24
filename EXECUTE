@@ -39,6 +39,11 @@ ghc --make prime.hs
 ./prime
 echo '\n'
 
+lang 0 "Java"
+javac Prime.java
+java Prime
+echo '\n'
+
 lang 0 "JavaScript"
 # Only for mac
 alias jsc="/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Resources/jsc"
