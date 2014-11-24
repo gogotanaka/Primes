@@ -1,32 +1,25 @@
-#!/bin/sh
-for i in {2..100}
-do
-    primes+=(1)
-done
-i=2
-until [ $i -gt 100 ]
-do
-    if test $(( i*i )) -lt 100
-    then
-        if test ${primes[$i]} -eq 1
-        then
-            j=0
-            until [ $((i*j+2)) -gt 100 ]
-            do
-                primes[$(( i*(j+2) ))]=0
-                j=$(( j+1 ))
-            done
-        fi
-    else
-        break 
-    fi
-    i=$(( i+1 ))
-done
+#!/usr/bin/zsh
+function primes() {
+  typeset -a primes
+  typeset i j
 
-for i in {2..100}
-do
-    if test ${primes[$i]} -eq 1
-    then
-        echo "$i"
+  primes[1]=""
+  for (( i=2; i<=$1; i++ )); do
+    primes[$i]=$i
+  done
+
+  for (( i=2; i**2<=$1; i++ )); do
+    if [[ ! -z $primes[$i] ]]; then
+      for (( j=i**2; j<=$1; j+=i )); do
+        primes[$j]=""
+      done
     fi
-done
+  done
+  for i in {2..100}; do
+    if [ ${primes[$i]} ]; then
+      echo $i
+    fi
+  done
+}
+
+primes 100
