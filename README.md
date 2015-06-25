@@ -6,7 +6,7 @@ English follows Japanese.
 # アレをめっちゃカラフルにしたい
 
 ## アレ↓
-![Screenshot 2014-11-06 21.32.40.png](https://qiita-image-store.s3.amazonaws.com/0/30440/f3638a2d-2774-8d83-ae4b-c5cd581b5bd3.png)
+![screenshot 2014-11-23 20 16 34](https://cloud.githubusercontent.com/assets/5266933/5160881/bcb571fc-734d-11e4-95fa-53c4d2623e61.png)
 
 各言語の持ち味を最大に用いながら100までの素数を出力させる.
 
@@ -24,6 +24,3 @@ Make the best out of each languages! : )
 Use [Sieve of Eratosthenes](http://en.wikipedia.org/wiki/Sieve_of_Eratosthenes), if possible. (To compare between languages.)
 
 ## I wait your PR!
-
-
-
