@@ -9,3 +9,25 @@ for sieve in range(2, int(math.sqrt(N)) + 1):
   primes = filter(lambda num: (num % sieve != 0) or (num == sieve), primes)
 
 print primes
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1 + 1
